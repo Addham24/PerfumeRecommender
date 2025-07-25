@@ -15,5 +15,9 @@ This project leverages a curated perfume dataset, ChromaDB for vector search, an
 2. **Semantic Retrieval**: Top-k matching perfumes are retrieved from a vector database (ChromaDB) using sentence-transformer embeddings
 3. **Prompt Construction**: The retrieved perfumes are passed as context into a custom prompt for the LLMs
 4. **LLM Response**: The prompt is sent to multiple LLMs (LLaMA 3, Mistral, Phi-3), each returning their top 2–3 recommendations
-5. **Judging LLM)**: A judging LLM fuses, deduplicates, and explains the final result
+5. **Judging LLM**: A judging LLM fuses, deduplicates, and explains the final result
 6. **Output**: The system returns a list of 2–3 well-justified perfume recommendations tailored to the user's request
+
+## Why Use an LLM Blender?
+
+
