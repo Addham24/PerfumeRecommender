@@ -1,6 +1,6 @@
 # PerfumeRecommender
 
-An intelligent, explainable perfume recommendation system that combines **Retrieval-Augmented Generation (RAG)** with a **multi-LLM ensemble** to deliver personalised scent suggestions based on natural language queries
+An intelligent, explainable perfume recommendation system that combines **Retrieval-Augmented Generation (RAG)** with a **multi-LLM ensemble** and a unique **judging mechasnim** to deliver personalised scent suggestions based on natural language queries
 
 This project leverages a curated perfume dataset, ChromaDB for vector search, and leading large language models (LLaMA 3, Mistral, Phi-3) to match user preferences with real perfumes, offering rich justifications for each recommendation.
 
@@ -37,4 +37,25 @@ Ranking and fusing avoids noise from low-quality candidates, improving robustnes
 ### 2. Broader Ensemble & Blending Research
 https://arxiv.org/abs/2401.02994 "Blending Is All You Need" (Lu et al., 2024): blending smaller models (6B/13B) can match or exceed performance of much larger models like ChatGPT (175B), leveraging their complementary strengths.
 
+
+## Unique Judging Mechanism: LLM-as-a-Judge for Output Evaluation
+Unlike traditional LLM ensemble approaches like LLM‑Blender, which rely on ranking (PairRanker) and fusion (GenFuser), this system introduces a distinct and novel component: a Judging mechanism.
+
+This Judging module functions as an LLM-as-a-Judge, evaluating the outputs of multiple LLMs based on semantic quality, relevance, and explanatory clarity. It provides a scored assessment of each candidate response—ensuring that only high‑quality recommendations make it to the final output.
+
+### Why This Matters
+Not present in LLM-Blender: PairRanker performs pairwise comparison, but does not use a dedicated LLM to score and judge candidate responses against a rubric or human-aligned criteria.
+
+Inspired by emerging research on LLM judges and multi-agent evaluation pipelines (Li et al., 2025, Weng et al., 2024), this component adds an extra layer of qualitative filtering and control.
+
+Enables domain-specific evaluation: In our case, the judge is tuned to value creativity, scent profile accuracy, and explanatory coherence for perfume recommendations.
+
+### Judging Workflow
+Multiple LLMs generate responses based on the retrieved perfume context.
+
+A Judge LLM scores these responses using a custom rubric prompt (e.g., “Rate this recommendation for clarity, creativity, and fit”).
+
+The highest-rated output is either selected directly or passed into a fusion step for refinement.
+
+This layered approach ensures that our final recommendation is a blend and a reasoned, evaluated, and curated answer, offering more trustworthiness and alignment with user needs.
 
