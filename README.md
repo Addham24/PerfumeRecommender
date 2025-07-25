@@ -46,7 +46,7 @@ This Judging module functions as an LLM-as-a-Judge, evaluating the outputs of mu
 ### Why This Matters
 Not present in LLM-Blender: PairRanker performs pairwise comparison, but does not use a dedicated LLM to score and judge candidate responses against a rubric or human-aligned criteria.
 
-Inspired by emerging research on LLM judges and multi-agent evaluation pipelines (Li et al., 2025, Weng et al., 2024), this component adds an extra layer of qualitative filtering and control.
+Inspired by emerging research on LLM judges and multi-agent evaluation pipelines, this component adds an extra layer of qualitative filtering and control.
 
 Enables domain-specific evaluation: In our case, the judge is tuned to value creativity, scent profile accuracy, and explanatory coherence for perfume recommendations.
 
