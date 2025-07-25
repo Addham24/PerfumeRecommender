@@ -19,7 +19,7 @@ This project leverages a curated perfume dataset, ChromaDB for vector search, an
 6. **Output**: The system returns a list of 2–3 well-justified perfume recommendations tailored to the user's request
 
 ## Why Use an LLM Blender?
-### 1. LLM‑Blender: PairRanker + GenFuser
+### 1. LLM‑Blender: PairRanker + GenFuser: https://arxiv.org/abs/2306.02561
 LLM‑Blender (Jiang et al., 2023) is a two-stage ensemble framework:
 
 PairRanker: performs pairwise comparisons between candidate outputs to select the best ones, capturing subtle qualitative differences.
@@ -35,9 +35,6 @@ Different open‑source LLMs excel on different inputs—no single model dominat
 Ranking and fusing avoids noise from low-quality candidates, improving robustness and output quality beyond naïve voting or average scoring (Jiang et al., 2023).
 
 ### 2. Broader Ensemble & Blending Research
-"Blending Is All You Need" (Lu et al., 2024): blending smaller models (6B/13B) can match or exceed performance of much larger models like ChatGPT (175B), leveraging their complementary strengths.
+https://arxiv.org/abs/2401.02994 "Blending Is All You Need" (Lu et al., 2024): blending smaller models (6B/13B) can match or exceed performance of much larger models like ChatGPT (175B), leveraging their complementary strengths.
 
-"Model Soups" (Wortsman et al., 2022): averaging weights from multiple fine‑tuned models improves accuracy and robustness without added inference cost, reinforcing the power of model combinations.
-
-"Rethinking Mixture‑of‑Agents" (Li et al., 2025): naive mixing of multiple LLM outputs often underperforms a ranked and selective approach like LLM‑Blender. Highlights that ensemble quality matters—not all combinations are beneficial.
 
